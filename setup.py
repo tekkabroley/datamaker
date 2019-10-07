@@ -4,14 +4,14 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="datamaker-test-v1-alexbroley",
+    name="datamaker-test-v2-alexbroley",
     version="0.0.1",
     author="Alex Broley",
     author_email="alex.broley@gmail.com",
     description="A package for generating tabluar datasets",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/tekkabroley/datamaker_pkg",
+    url="https://github.com/tekkabroley/DataMaker",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
