@@ -8,15 +8,15 @@ setuptools.setup(
     version="0.0.1",
     author="Alex Broley",
     author_email="alex.broley@gmail.com",
-    description="A package for generating random tabluar datasets. Designed to output to SQL, CSV or JSON.",
+    description="A package for generating tabluar datasets",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/tekkabroley/DataGenerator",
+    url="https://github.com/tekkabroley/datamaker_pkg",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.7',
+    python_requires='>=3.6',
 )
