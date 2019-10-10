@@ -1,12 +1,12 @@
 from datetime import datetime
 
-from logic.CodeGenLogic import get_name_columns
+from datamaker.logic.CodeGenLogic import get_name_columns
 
-from logic.common.Common import open_json, is_file, is_dir
+from datamaker.logic.common.Common import open_json, is_file, is_dir
 
 
 """ expected datestamp and timestamp formats """
-formats_path = "./metadata/formats.json"
+formats_path = "datamaker/metadata/formats.json"
 formats_json = open_json(formats_path)
 
 common_ts_format = formats_json["common_ts_format"] # YYYY-mm-dd HH:MM:SS

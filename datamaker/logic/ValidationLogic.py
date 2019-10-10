@@ -6,7 +6,7 @@ from datamaker.logic.common.Common import open_json, is_file, is_dir
 
 
 """ expected datestamp and timestamp formats """
-formats_path = "./datamaker/metadata/formats.json"
+formats_path = "datamaker/metadata/formats.json"
 formats_json = open_json(formats_path)
 
 common_ts_format = formats_json["common_ts_format"] # YYYY-mm-dd HH:MM:SS
