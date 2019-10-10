@@ -1,6 +1,6 @@
-from DataGenerator import DataGen
+from datamaker.DataGenerator import DataGen
 
-from logic.common.Common import stringify, write_to_text, get_default_file_name, is_file, \
+from datamaker.logic.common.Common import stringify, write_to_text, get_default_file_name, is_file, \
     join_path_to_filename
 
 

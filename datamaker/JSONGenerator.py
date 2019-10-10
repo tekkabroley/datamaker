@@ -1,6 +1,6 @@
-from DataGenerator import DataGen
+from datamaker.DataGenerator import DataGen
 
-from logic.common.Common import get_default_file_name, write_to_json, is_file, \
+from datamaker.logic.common.Common import get_default_file_name, write_to_json, is_file, \
     join_path_to_filename
 
 
