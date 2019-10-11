@@ -5,10 +5,6 @@ from random import randint
 from datetime import datetime
 
 
-def get_rel_path_from_file(path):
-    rel_path = os.path.join(os.path.dirname(__file__), path)
-    return rel_path
-
 def open_json(path):
     """ untility function for opening json files """
     with open(path, 'r') as jsonfile:

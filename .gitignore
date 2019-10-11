@@ -11,4 +11,7 @@ datamaker/logic/*.pyc
 datamaker/logic/common/*.pyc
 
 # ignore unitests
-datamaker/*_unittest.py
+*_unittest.py
+
+# ignore .DS_Store
+datamaker/.DS_Store

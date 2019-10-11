@@ -1,12 +1,6 @@
-#from datamaker.DataGenerator import DataGen
-
-#from datamaker.logic.common.Common import write_to_csv, get_default_file_name, is_file, join_path_to_filename
-
 from .DataGenerator import DataGen
 
 from .logic.common.Common import write_to_csv, get_default_file_name, is_file, join_path_to_filename
-
-
 
 
 class CSVGen(DataGen):
