@@ -1,15 +1,17 @@
+import os
+
 from random import randint, random
 
-from datamaker.logic.CodeGenLogic import convert_common_ds_to_ts, timestamp_add_seconds, \
+from .logic.CodeGenLogic import convert_common_ds_to_ts, timestamp_add_seconds, \
     datestamp_add_days, get_date_diff_days, get_time_diff_seconds, create_email, \
     get_name_columns, set_default_boundary_conditions, set_is_null, \
     get_val_from_fixed_map
 
-from datamaker.logic.ValidationLogic import validate_num_rows, validate_column_defs, \
+from .logic.ValidationLogic import validate_num_rows, validate_column_defs, \
     check_common_ts_format, validate_metadata_type, validate_metadata_types, \
     validate_path
 
-from datamaker.logic.common.Common import open_json, get_random_val_from_list
+from .logic.common.Common import open_json, get_random_val_from_list
 
 
 class DataGen(object):
@@ -32,8 +34,9 @@ class DataGen(object):
         return True
 
     def get_name(self):
-        path = "./static/names/names.json"
-        jsondata = open_json(path)
+        names_path = "./static/names/names.json"
+        rel_path = os.path.join(os.path.dirname(__file__), names_path)
+        jsondata = open_json(rel_path)
         names = jsondata.get("names")
         name = get_random_val_from_list(names)
         return name
@@ -52,15 +55,18 @@ class DataGen(object):
     def get_address(self):
         """ returns num street city state """
         streets_path = "./static/streets/streets.json"
-        streets_json = open_json(streets_path)
+        streets_rel_path = os.path.join(os.path.dirname(__file__), streets_path)
+        streets_json = open_json(streets_rel_path)
         streets = streets_json["streets"]
         suffixes = streets_json["suffixes"]
 
         cities_path = "./static/cities/cities.json"
-        cities = open_json(cities_path)["cities"]
+        cities_rel_path = os.path.join(os.path.dirname(__file__), cities_path)
+        cities = open_json(cities_rel_path)["cities"]
 
         states_path = "./static/states/states.json"
-        states = open_json(states_path)
+        states_rel_path = os.path.join(os.path.dirname(__file__), states_path)
+        states = open_json(states_rel_path)
 
         num = randint(20, 8000)
         street = get_random_val_from_list(streets)
@@ -102,7 +108,8 @@ class DataGen(object):
     def get_country(self):
         """ return an ISO 3166-1 alpha-2 codes """
         path = "./static/countries/countries.json"
-        jsondata = open_json(path)
+        rel_path = os.path.join(os.path.dirname(__file__), path)
+        jsondata = open_json(rel_path)
         country_tuple = get_random_val_from_list(jsondata)
         code = country_tuple["code"]
         return code
@@ -110,14 +117,16 @@ class DataGen(object):
     def get_state(self):
         """ return a two letter US state abbreviation """
         path = "./static/states/states.json"
-        jsondata = open_json(path)
+        rel_path = os.path.join(os.path.dirname(__file__), path)
+        jsondata = open_json(rel_path)
         state_tuple = get_random_val_from_list(jsondata)
         code = state_tuple["abbreviation"]
         return code
 
     def get_metadata(self, column_name):
         path = "./metadata/parameters.json"
-        metadata_defs_json = open_json(path)
+        rel_path = os.path.join(os.path.dirname(__file__), path)
+        metadata_defs_json = open_json(rel_path)
         parameters = metadata_defs_json["parameter"]
 
         metadata = self.column_defs.get(column_name)

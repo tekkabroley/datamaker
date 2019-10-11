@@ -1,12 +1,17 @@
 from random import randint, random
 from datetime import datetime, timedelta
 
-from datamaker.logic.common.Common import open_json, convert_date_to_timestamp, get_time_diff
+import os
+
+from .common.Common import open_json, convert_date_to_timestamp, get_time_diff
 
 
 """ expected datestamp and timestamp formats """
-formats_path = "datamaker/metadata/formats.json"
-formats_json = open_json(formats_path)
+#formats_path = "/anaconda3/lib/python3.7/site-packages/datamaker/metadata/formats.json"
+
+formats_path = "../metadata/formats.json"
+rel_path = os.path.join(os.path.dirname(__file__), formats_path)
+formats_json = open_json(rel_path)
 
 common_ts_format = formats_json["common_ts_format"] # YYYY-mm-dd HH:MM:SS
 common_ds_format = formats_json["common_ds_format"] # YYYY-mm-dd

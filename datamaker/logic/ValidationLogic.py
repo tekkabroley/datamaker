@@ -1,13 +1,17 @@
 from datetime import datetime
 
-from datamaker.logic.CodeGenLogic import get_name_columns
+import os
 
-from datamaker.logic.common.Common import open_json, is_file, is_dir
+from .CodeGenLogic import get_name_columns
+
+from .common.Common import open_json, is_file, is_dir
 
 
 """ expected datestamp and timestamp formats """
-formats_path = "datamaker/metadata/formats.json"
-formats_json = open_json(formats_path)
+#formats_path = "/anaconda3/lib/python3.7/site-packages/datamaker/metadata/formats.json"
+formats_path = "../metadata/formats.json"
+rel_path = os.path.join(os.path.dirname(__file__), formats_path)
+formats_json = open_json(rel_path)
 
 common_ts_format = formats_json["common_ts_format"] # YYYY-mm-dd HH:MM:SS
 common_ds_format = formats_json["common_ds_format"] # YYYY-mm-dd
@@ -72,8 +76,9 @@ def validate_ts_format(ts):
     return True
 
 def get_metadata_types():
-    parameters_path = "./metadata/parameters.json"
-    parameters_json = open_json(parameters_path)
+    parameters_path = "../metadata/parameters.json"
+    rel_path = os.path.join(os.path.dirname(__file__), parameters_path)
+    parameters_json = open_json(rel_path)
     parameter_types = parameters_json["parameter_type"]
     return parameter_types
 

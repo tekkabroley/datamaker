@@ -1,5 +1,14 @@
 # ignore __pycache__
 __pycache__
+datamaker/__pycache__
+datamaker/logic/__pycache__
+datamaker/logic/common/__pycache__
 
 # ignore .pyc files
 *.pyc
+datamaker/*.pyc
+datamaker/logic/*.pyc
+datamaker/logic/common/*.pyc
+
+# ignore unitests
+datamaker/*_unittest.py
