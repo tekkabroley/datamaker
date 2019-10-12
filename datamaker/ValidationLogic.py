@@ -2,7 +2,7 @@ from datetime import datetime
 
 from .CodeGenLogic import get_name_columns
 
-from .common.Common import open_json, is_file, is_dir
+from .common.Common import open_json, is_file, is_contained_in_dir
 
 
 """ expected datestamp and timestamp formats """
@@ -208,8 +208,7 @@ def validate_varchar_length(column_defs, column_name):
 
 def validate_path(path):
     """ validation for the DataGen path parameter """
-    isdir = is_dir(path)
-    isfile = is_file(path)
-    if not (isdir or isfile):
+    isdir = is_contained_in_dir(path)
+    if not isdir:
         raise ValueError("found invalid path: {}".format(path))
     return True

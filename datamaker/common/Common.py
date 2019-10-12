@@ -54,8 +54,9 @@ def get_default_file_name(table_name, ext):
 def is_file(path):
     return os.path.isfile(path)
 
-def is_dir(path):
-    return os.path.isdir(path)
+def is_contained_in_dir(path):
+    dirname = os.path.dirname(path)
+    return os.path.isdir(dirname)
 
 def join_path_to_filename(path, filename):
     return os.path.join(path, filename)
