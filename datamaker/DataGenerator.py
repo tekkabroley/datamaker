@@ -32,7 +32,7 @@ class DataGen(object):
         return True
 
     def get_name(self):
-        names_path = "datamaker/static/names/names.json"
+        names_path = "datamaker/static/names.json"
         jsondata = open_json(names_path)
         names = jsondata.get("names")
         name = get_random_val_from_list(names)
@@ -51,15 +51,15 @@ class DataGen(object):
 
     def get_address(self):
         """ returns num street city state """
-        streets_path = "datamaker/static/streets/streets.json"
+        streets_path = "datamaker/static/streets.json"
         streets_json = open_json(streets_path)
         streets = streets_json["streets"]
         suffixes = streets_json["suffixes"]
 
-        cities_path = "datamaker/static/cities/cities.json"
+        cities_path = "datamaker/static/cities.json"
         cities = open_json(cities_path)["cities"]
 
-        states_path = "datamaker/static/states/states.json"
+        states_path = "datamaker/static/states.json"
         states = open_json(states_path)
 
         num = randint(20, 8000)
@@ -101,7 +101,7 @@ class DataGen(object):
 
     def get_country(self):
         """ return an ISO 3166-1 alpha-2 codes """
-        path = "datamaker/static/countries/countries.json"
+        path = "datamaker/static/countries.json"
         jsondata = open_json(path)
         country_tuple = get_random_val_from_list(jsondata)
         code = country_tuple["code"]
@@ -109,7 +109,7 @@ class DataGen(object):
 
     def get_state(self):
         """ return a two letter US state abbreviation """
-        path = "datamaker/static/states/states.json"
+        path = "datamaker/static/states.json"
         jsondata = open_json(path)
         state_tuple = get_random_val_from_list(jsondata)
         code = state_tuple["abbreviation"]
