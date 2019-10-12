@@ -14,3 +14,6 @@ datamaker/common/*.pyc
 # ignore .DS_Store
 .DS_Store
 datamaker/.DS_Store
+
+# ignore virtual environment
+env
