@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="datamaker-test-v2-alexbroley",
-    version="0.0.6",
+    version="0.0.7",
     author="Alex Broley",
     author_email="alex.broley@gmail.com",
     description="A package for generating tabluar datasets",
