@@ -124,8 +124,12 @@ def validate_nullable(column_name, is_nullable, proportion_null):
     if not is_nullable:
         raise ValueError("proportion_null defined for non nullable field {}. if intended to be nullable set is_nullable = True".format(column_name))
 
-    condition = proportion_null < 0 or proportion_null > 1
-    if condition:
+    condition1 = not (isinstance(proportion_null, int) or isinstance(proportion_null, float))
+    if condition1:
+        raise ValueError("proportion_null must be numeric value. found {}".format(proportion_null))
+
+    condition2 = proportion_null < 0 or proportion_null > 1
+    if condition2:
         raise ValueError("proportion_null must be a value between 0 and 1. found {}".format(proportion_null))
     return True
 
