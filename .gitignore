@@ -17,3 +17,6 @@ datamaker/.DS_Store
 
 # ignore virtual environment
 env
+
+# ignore shell scripts
+*.sh
