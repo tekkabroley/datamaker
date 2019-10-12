@@ -1,15 +1,15 @@
 from random import randint, random
 
-from .logic.CodeGenLogic import convert_common_ds_to_ts, timestamp_add_seconds, \
+from .CodeGenLogic import convert_common_ds_to_ts, timestamp_add_seconds, \
     datestamp_add_days, get_date_diff_days, get_time_diff_seconds, create_email, \
     get_name_columns, set_default_boundary_conditions, set_is_null, \
     get_val_from_fixed_map
 
-from .logic.ValidationLogic import validate_num_rows, validate_column_defs, \
+from .ValidationLogic import validate_num_rows, validate_column_defs, \
     check_common_ts_format, validate_metadata_type, validate_metadata_types, \
     validate_path
 
-from .logic.common.Common import open_json, get_random_val_from_list
+from .common.Common import open_json, get_random_val_from_list
 
 
 class DataGen(object):

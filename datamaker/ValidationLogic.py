@@ -1,7 +1,5 @@
 from datetime import datetime
 
-import os
-
 from .CodeGenLogic import get_name_columns
 
 from .common.Common import open_json, is_file, is_dir
@@ -74,9 +72,8 @@ def validate_ts_format(ts):
     return True
 
 def get_metadata_types():
-    parameters_path = "../metadata/parameters.json"
-    rel_path = os.path.join(os.path.dirname(__file__), parameters_path)
-    parameters_json = open_json(rel_path)
+    parameters_path = "datamaker/metadata/parameters.json"
+    parameters_json = open_json(parameters_path)
     parameter_types = parameters_json["parameter_type"]
     return parameter_types
 
