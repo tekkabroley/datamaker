@@ -12,4 +12,5 @@ datamaker/common/*.pyc
 *_unittest.py
 
 # ignore .DS_Store
+.DS_Store
 datamaker/.DS_Store
