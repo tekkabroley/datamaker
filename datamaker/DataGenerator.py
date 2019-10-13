@@ -11,6 +11,9 @@ from .ValidationLogic import validate_num_rows, validate_column_defs, \
 
 from .common.Common import open_json, get_random_val_from_list
 
+from .paths import names_path, streets_path, cities_path, states_path, countries_path, \
+    paraeters_path
+
 
 class DataGen(object):
     """ super class for building tabular datasets """
@@ -32,7 +35,6 @@ class DataGen(object):
         return True
 
     def get_name(self):
-        names_path = "datamaker/static/names.json"
         jsondata = open_json(names_path)
         names = jsondata.get("names")
         name = get_random_val_from_list(names)
@@ -51,15 +53,10 @@ class DataGen(object):
 
     def get_address(self):
         """ returns num street city state """
-        streets_path = "datamaker/static/streets.json"
         streets_json = open_json(streets_path)
         streets = streets_json["streets"]
         suffixes = streets_json["suffixes"]
-
-        cities_path = "datamaker/static/cities.json"
         cities = open_json(cities_path)["cities"]
-
-        states_path = "datamaker/static/states.json"
         states = open_json(states_path)
 
         num = randint(20, 8000)
@@ -101,23 +98,20 @@ class DataGen(object):
 
     def get_country(self):
         """ return an ISO 3166-1 alpha-2 codes """
-        path = "datamaker/static/countries.json"
-        jsondata = open_json(path)
+        jsondata = open_json(countries_path)
         country_tuple = get_random_val_from_list(jsondata)
         code = country_tuple["code"]
         return code
 
     def get_state(self):
         """ return a two letter US state abbreviation """
-        path = "datamaker/static/states.json"
-        jsondata = open_json(path)
+        jsondata = open_json(states_path)
         state_tuple = get_random_val_from_list(jsondata)
         code = state_tuple["abbreviation"]
         return code
 
     def get_metadata(self, column_name):
-        path = "datamaker/metadata/parameters.json"
-        metadata_defs_json = open_json(path)
+        metadata_defs_json = open_json(paraeters_path)
         parameters = metadata_defs_json["parameter"]
 
         metadata = self.column_defs.get(column_name)

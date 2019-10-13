@@ -4,11 +4,11 @@ from .CodeGenLogic import get_name_columns
 
 from .common.Common import open_json, is_file, is_contained_in_dir
 
+from .paths import formats_path, paraeters_path
+
 
 """ expected datestamp and timestamp formats """
-formats_path = "datamaker/metadata/formats.json"
 formats_json = open_json(formats_path)
-
 common_ts_format = formats_json["common_ts_format"] # YYYY-mm-dd HH:MM:SS
 common_ds_format = formats_json["common_ds_format"] # YYYY-mm-dd
 
@@ -72,8 +72,7 @@ def validate_ts_format(ts):
     return True
 
 def get_metadata_types():
-    parameters_path = "datamaker/metadata/parameters.json"
-    parameters_json = open_json(parameters_path)
+    parameters_json = open_json(paraeters_path)
     parameter_types = parameters_json["parameter_type"]
     return parameter_types
 
