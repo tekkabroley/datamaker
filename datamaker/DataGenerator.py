@@ -11,7 +11,7 @@ from .ValidationLogic import validate_num_rows, validate_column_defs, \
 
 from .common.Common import open_json, get_random_val_from_list
 
-from .paths import names_path, streets_path, cities_path, states_path, countries_path, \
+from .common.paths import names_path, streets_path, cities_path, states_path, countries_path, \
     paraeters_path
 
 

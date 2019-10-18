@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 
 from .common.Common import open_json, convert_date_to_timestamp, get_time_diff
 
-from .paths import formats_path
+from .common.paths import formats_path
 
 
 """ expected datestamp and timestamp formats """

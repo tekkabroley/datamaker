@@ -4,7 +4,7 @@ from .CodeGenLogic import get_name_columns
 
 from .common.Common import open_json, is_file, is_contained_in_dir
 
-from .paths import formats_path, paraeters_path
+from .common.paths import formats_path, paraeters_path
 
 
 """ expected datestamp and timestamp formats """
