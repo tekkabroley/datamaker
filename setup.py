@@ -4,8 +4,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 
-metadata_path = "datamaker/metadata/"
-static_path = "datamaker/static/"
+metadata_path = "datamaker/common/metadata/"
+static_path = "datamaker/common/static/"
 datafiles = [
     ("metadata", [metadata_path + "formats.json"]),
     ("metadata", [metadata_path + "parameters.json"]),

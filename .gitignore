@@ -22,4 +22,4 @@ venv
 *.sh
 
 # ignore .idea
-.idea
+.ideabah
