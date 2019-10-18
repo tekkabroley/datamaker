@@ -16,7 +16,10 @@ datamaker/common/*.pyc
 datamaker/.DS_Store
 
 # ignore virtual environment
-env
+venv
 
 # ignore shell scripts
 *.sh
+
+# ignore .idea
+.idea

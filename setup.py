@@ -19,7 +19,7 @@ datafiles = [
 
 setuptools.setup(
     name="datamaker-test-v2-alexbroley",
-    version="0.0.8",
+    version="0.0.9",
     author="Alex Broley",
     author_email="alex.broley@gmail.com",
     description="A package for generating tabluar datasets",
