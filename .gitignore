@@ -22,4 +22,9 @@ venv
 *.sh
 
 # ignore .idea
-.ideabah
+.idea
+
+# ignore build elements
+build
+datamaker_test_*
+dist

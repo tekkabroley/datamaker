@@ -28,7 +28,6 @@ The definitions of the parameters for **colum_defs** is given below.
 - bounds: tuple(lowerbnd, upperbnd)
 - fixed_collection: tuple(elem1, elem2, ..., elemn)
 - fixed_map: tuple(column_name, {key: value})
-- is_randomized: bool
 - is_nullable: bool
 - proportion_null: float
 
