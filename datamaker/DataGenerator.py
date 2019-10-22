@@ -12,7 +12,7 @@ from .ValidationLogic import validate_num_rows, validate_column_defs, \
 from .common.Common import open_json, get_random_val_from_list
 
 from .common.paths import names_path, streets_path, cities_path, states_path, countries_path, \
-    paraeters_path
+    parameters_path
 
 
 class DataGen(object):
@@ -111,7 +111,7 @@ class DataGen(object):
         return code
 
     def get_metadata(self, column_name):
-        metadata_defs_json = open_json(paraeters_path)
+        metadata_defs_json = open_json(parameters_path)
         parameters = metadata_defs_json["parameter"]
 
         metadata = self.column_defs.get(column_name)
