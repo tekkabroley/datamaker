@@ -16,7 +16,7 @@ class CSVGen(DataGen):
 
     def generate_document(self):
         """ generate a list of tuples """
-        collection = {} # {col_name: [values]}
+        collection = {}
         column_names = tuple(self.column_defs.keys())
         pre_csv = [column_names]
         for i in range(self.num_rows):

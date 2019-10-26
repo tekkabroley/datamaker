@@ -2,9 +2,9 @@ from datetime import datetime
 
 from .CodeGenLogic import get_name_columns
 
-from .common.Common import open_json, is_file, is_contained_in_dir
+from .common.Common import open_json, is_contained_in_dir
 
-from .common.paths import formats_path, paraeters_path
+from .common.paths import formats_path, parameters_path
 
 
 """ expected datestamp and timestamp formats """
@@ -72,7 +72,7 @@ def validate_ts_format(ts):
     return True
 
 def get_metadata_types():
-    parameters_json = open_json(paraeters_path)
+    parameters_json = open_json(parameters_path)
     parameter_types = parameters_json["parameter_type"]
     return parameter_types
 
