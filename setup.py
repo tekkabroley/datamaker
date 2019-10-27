@@ -18,7 +18,7 @@ datafiles = [
 
 
 setuptools.setup(
-    name="datamaker-test-v2-alexbroley",
+    name="datamaker",
     version="0.1.1",
     author="Alex Broley",
     author_email="alex.broley@gmail.com",
