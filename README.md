@@ -52,7 +52,6 @@ an imaginary online store. We'll create a table with the following columns:
 - price - the cost of the product being ordered. Since we want every row with a given product_id to have the same cost we 
 use a fixed map to implement this column 
 
-FIX VALIDAITON LOGIC TO ALLOW EXPORT WITHOUT ABSOLUTE PATH
 ```
 from datamaker.SQLTableGenerator import SQLTableGen
 
