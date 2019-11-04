@@ -1,7 +1,6 @@
 from .DataGenerator import DataGen
 
-from .common.Common import stringify, write_to_text, get_default_file_name, \
-    is_file, join_path_to_filename
+from .common.Common import stringify, write_to_text, get_default_file_name, is_dir, join_path_to_filename
 
 
 class SQLTableGen(DataGen):
@@ -72,9 +71,9 @@ class SQLTableGen(DataGen):
     def build_sql_doc(self):
         """ generate SQL queries and write to file """
         table_queries = self.generate_table_queries()
-        if is_file(self.path):
-            outfile = self.path
-        else:
+        if is_dir(self.path):
             filename = get_default_file_name(self.table_name, "sql")
             outfile = join_path_to_filename(self.path, filename)
+        else:
+            outfile = self.path
         write_to_text(outfile, table_queries)
