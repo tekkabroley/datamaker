@@ -22,8 +22,8 @@ The definitions of the parameters for **colum_defs** is given below.
 - varchar_length: int (required for MySQL and MS SQL)
 - is_primary_key: bool - True if this field is the primary key
 - is_name: bool - True if values for this column should come from the names collection
-- is_email: bool - True if this column is an email. Email generated will be of the form 
-first_name.last_name@fakeemail.com. Note that you must have at least one column with is_name = True to use is_email.
+- is_email: bool - True if this column is an email. Note that you must have at least one column with is_name = True 
+to use is_email.
 - is_date: bool - True if this column is a date. Default format is YYYY-mm-dd
 - is_timestamp: bool - True if this column is a timestamp. Default format is YYYY-mm-dd HH:MM:SS
 - is_country: bool - True of this column is a country code. Codes are ISO Alpha-2.
