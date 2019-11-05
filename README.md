@@ -74,3 +74,4 @@ gen.build_sql_doc()
 
 Future improvements:
 - Add support for sequential fields
+- Add support for column type inference
