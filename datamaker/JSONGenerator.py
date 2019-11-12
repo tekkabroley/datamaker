@@ -1,7 +1,6 @@
 from .DataGenerator import DataGen
 
-from .common.Common import get_default_file_name, write_to_json, is_file, \
-    join_path_to_filename
+from .common.Common import get_default_file_name, write_to_json, is_file, is_dir, is_contained_in_dir, join_path_to_filename
 
 
 class JSONGen(DataGen):
@@ -26,7 +25,10 @@ class JSONGen(DataGen):
 
     def build_json_doc(self):
         pre_json = self.generate_document()
-        if is_file(self.path):
+        suffix = self.path[-4:]
+        condition1 = is_dir(self.path) or is_contained_in_dir(self.path)
+        condition2 = suffix == 'json'
+        if condition1 and condition2:
             outfile = self.path
         else:
             filename = get_default_file_name(self.table_name, "json")
