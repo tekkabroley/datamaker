@@ -142,9 +142,9 @@ use a fixed map to implement this column
 Note that in this example we're defining the output path as a valid directory instead of a path to a file. In this 
 case datamaker will automatically generate the name of the file as: 
 
-table_name.current_date.sql
+**table_name**.**current_date**.sql
 
-Where table_name is the name of the table and current_date is today's date.
+Where **table_name** is the name of the table and **current_date** is today's date.
 
 ```
 from datamaker.SQLTableGenerator import SQLTableGen
@@ -166,7 +166,7 @@ gen = SQLTableGen(table_name, num_rows, column_defs, output_path)
 gen.build_sql_doc()
 ```
 
-Future improvements:
+### Future improvements:
 - Add support for sequential fields
 - Add support for column type inference
 - Add support for tsv generation
