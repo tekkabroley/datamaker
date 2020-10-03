@@ -89,7 +89,7 @@ def write_to_text(path, dataset):
         outfile.write(dataset)
     outfile.close()
     print("dataset has been written to file found at {}".format(path))
-    
+
 
 def write_to_json(path, dataset):
     """ write dataset to json file located at path """
