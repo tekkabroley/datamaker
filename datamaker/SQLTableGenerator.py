@@ -35,8 +35,9 @@ class SQLTableGen(DataGen):
         row_values, collection = self.generate_data(collection)
         for column_name in row_values:
             col_type = self.column_defs[column_name]["col_type"]
-            if col_type == "varchar":
-                val = stringify(row_values[column_name])
+            val = row_values[column_name]
+            if col_type == "varchar" and val != 'NULL':
+                val = stringify(val)
                 row += val + ","
             else:
                 val = row_values[column_name]
@@ -49,7 +50,7 @@ class SQLTableGen(DataGen):
     def generate_insert_query(self):
         """ generates the insert statement """
         insert_statement = "insert into {table_name} values".format(table_name=self.table_name)
-        collection = {} # {col_name: [values]}
+        collection = {}  # {col_name: [values]}
 
         for i in range(self.num_rows):
             row, collection = self.generate_row(collection)
