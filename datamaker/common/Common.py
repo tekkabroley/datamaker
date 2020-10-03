@@ -11,9 +11,11 @@ def open_json(path):
         jsondata = json.load(jsonfile)
     return jsondata
 
+
 def stringify(val):
     """ add string quotes and convert val to str """
     return "'{}'".format(val)
+
 
 def get_random_val_from_list(ls):
     """ return a random element from a list """
@@ -21,11 +23,13 @@ def get_random_val_from_list(ls):
     index = randint(0, col_len-1)
     return ls[index]
 
+
 def convert_date_to_timestamp(ds, ds_format, ts_format):
     """ convert datestamp to timestamp with ds_format and ts_format respectively """
     dsobj = datetime.strptime(ds, ds_format)
     ts = datetime.strftime(dsobj, ts_format)
     return ts
+
 
 def get_time_diff(ts0, ts1, ts_format, units):
     ts0obj = datetime.strptime(ts0, ts_format)
@@ -41,6 +45,7 @@ def get_time_diff(ts0, ts1, ts_format, units):
         raise ValueError("get_time_diff currently supports units == seconds or units == days. found {}".format(units))
     return delta
 
+
 def get_default_file_name(table_name, ext):
     """ returns a default file path and name with extention ext """
     date = datetime.strftime(datetime.now(), '%Y-%m-%d')
@@ -54,16 +59,20 @@ def get_default_file_name(table_name, ext):
 def is_file(path):
     return os.path.isfile(path)
 
+
 def is_dir(path):
     return os.path.isdir(path)
+
 
 def is_contained_in_dir(path):
     path_ = os.path.abspath(path)
     dirname = os.path.dirname(path_)
     return is_dir(dirname)
 
+
 def join_path_to_filename(path, filename):
     return os.path.join(path, filename)
+
 
 def write_to_csv(path, dataset):
     """ write dataset to csv. dataset is a list of tuples """
@@ -73,12 +82,14 @@ def write_to_csv(path, dataset):
     csvfile.close()
     print("dataset has been written to csv file found at {}".format(path))
 
+
 def write_to_text(path, dataset):
     """ write dataset to file located at path """
     with open(path, 'w') as outfile:
         outfile.write(dataset)
     outfile.close()
     print("dataset has been written to file found at {}".format(path))
+    
 
 def write_to_json(path, dataset):
     """ write dataset to json file located at path """
